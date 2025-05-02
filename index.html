@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">Portfolio</div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="visitor-count"><i class="fas fa-users"></i> <span id="visitors">0</span></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animated-text">Hi, I'm <span class="highlight">Subash Dahal</span></h1>
+                <h2 class="animated-subtext">Currently pursuing my bachelor degree in software engineer</h2>
+                <p class="animated-paragraph">I create beautiful, functional websites that deliver results.</p>
+                <a href="#contact" class="btn btn-primary animated-btn">Hire Me</a>
+                <a href="#projects" class="btn btn-secondary animated-btn">View Work</a>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="images/profile.jpg" alt="Profile Image" class="profile-img">
+                    <div class="circle-animation"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/download (1).jpg" alt="About Me" class="about-img">
+                </div>
+                <div class="about-text">
+                    <h3>Who am I?</h3>
+                    <p>I'm a passionate web developer with over 5 years of experience creating modern, responsive websites and web applications. I specialize in front-end development but also have strong back-end skills.</p>
+                    <p>My approach combines technical expertise with creative design to deliver exceptional user experiences that drive business growth.</p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span>Name:</span>
+                            <p>Subash Dahal</p>
+                        </div>
+                        <div class="detail-item">
+                            <span>Email:</span>
+                            <p>dahalsubash51@gmail.com</p>
+                        </div>
+                        <!--<div class="detail-item">
+                            <span>Experience:</span>
+                            <p>none </p>
+                        </div>-->
+                        <div class="detail-item">
+                            <span>Location:</span>
+                            <p>Pokhara, Nepal</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>HTML5</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress html"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>CSS3</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress css"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>JavaScript</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress js"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>React</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress react"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Node.js</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress node"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Python</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress python"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>PHP</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress php"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>SQL</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress sql"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Projects</span></h2>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="app">App</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item" data-category="web">
+                    <div class="project-img">
+                        <img src="images/ecomm-website.png" alt="Project 1">
+                        <div class="project-overlay">
+                            <h3>E-commerce Website</h3>
+                            <p>Where people can buy and rate the product </p>
+                            <a href="https://itsmesubas.github.io/PraYuJa-Enterprises.com/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-category="app">
+                    <div class="project-img">
+                        <img src="https://via.placehold" alt="Project 2">
+                        <div class="project-overlay">
+                            <h3>Task Management App</h3>
+                            <p>Productivity app with real-time collaboration</p>
+                            <a href="https://itsmesubas.github.io/PraYuJa-Enterprises.com/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-category="design">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Project 3">
+                        <div class="project-overlay">
+                            <h3>Brand Identity</h3>
+                            <p>Complete branding package for startup</p>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-category="web">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Project 4">
+                        <div class="project-overlay">
+                            <h3>Portfolio Website</h3>
+                            <p>Custom portfolio for creative professional</p>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-category="app">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Project 5">
+                        <div class="project-overlay">
+                            <h3>Fitness Tracker</h3>
+                            <p>Mobile app for workout tracking</p>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+               <!---<div class="project-item" data-category="design">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Project 6">
+                        <div class="project-overlay">
+                            <h3>UI/UX Design</h3>
+                            <p>Dashboard interface for SaaS product</p>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Certificates</span></h2>
+            <div class="certificates-slider">
+                <div class="certificate-item">
+                    <div class="certificate-img">
+                        <img src="https://via.placeholder.com/400x300" alt="Certificate 1">
+                        <div class="certificate-overlay">
+                            <h3>Advanced Web Development</h3>
+                            <p>Issued by: Udemy</p>
+                            <p>Date: Jan 2023</p>
+                            <a href="#" class="view-certificate">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-img">
+                        <img src="https://via.placeholder.com/400x300" alt="Certificate 2">
+                        <div class="certificate-overlay">
+                            <h3>JavaScript Expert</h3>
+                            <p>Issued by: Coursera</p>
+                            <p>Date: Aug 2022</p>
+                            <a href="#" class="view-certificate">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-img">
+                        <img src="https://via.placeholder.com/400x300" alt="Certificate 3">
+                        <div class="certificate-overlay">
+                            <h3>UI/UX Design</h3>
+                            <p>Issued by: Google</p>
+                            <p>Date: May 2021</p>
+                            <a href="#" class="view-certificate">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-img">
+                        <img src="https://via.placeholder.com/400x300" alt="Certificate 4">
+                        <div class="certificate-overlay">
+                            <h3>React Masterclass</h3>
+                            <p>Issued by: Pluralsight</p>
+                            <p>Date: Nov 2020</p>
+                            <a href="#" class="view-certificate">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>your.email@example.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 (123) 456-7890</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Street, City, Country</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Portfolio</h2>
+                    <p>Creating digital experiences that matter.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> your.email@example.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Your Name. All Rights Reserved.</p>
+                <div class="visitor-count-footer">
+                    <i class="fas fa-users"></i> <span id="visitors-footer">0</span> Visitors
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
