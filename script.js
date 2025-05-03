@@ -1,12 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Loading screen
-    const loadingScreen = document.querySelector('.loading-screen');
-    
-    // Hide loading screen after 2 seconds
-    setTimeout(() => {
-        loadingScreen.classList.add('hide');
-    }, 2000);
-    
+
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
     
@@ -42,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!count) {
             // Initial count - in a real app, this would come from your database
-            count = Math.floor(Math.random() * 500) + 100; // Random number between 100-600
+            count = Math.floor(Math.random() * 5) + 1; // Random number between 100-600
         } else {
             count = parseInt(count) + 1;
         }
