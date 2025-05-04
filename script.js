@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!count) {
             // Initial count - in a real app, this would come from your database
-            count = Math.floor(Math.random() * 5) + 1; // Random number between 100-600
+            count = Math.floor(Math.random() * 1) + 1; // Random number between 100-600
         } else {
             count = parseInt(count) + 1;
         }
@@ -230,4 +230,9 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
         });
     }
+});
+fetch('https://api.countapi.xyz/hit/subashdahal17.com.np')
+.then(res => res.json())
+.then(data => {
+  document.getElementById("counter").textContent = data.value;
 });
