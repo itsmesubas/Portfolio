@@ -8,7 +8,7 @@
     --success-color: #2ecc71;
     --warning-color: #f39c12;
     --gray-color: #4b5455;
-    --white-color: #ffffff;
+    --white-color: #fff7f7;
     --black-color: #000000;
 }
 
@@ -37,7 +37,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
-    background-color: #ffffff;
+    background-color: #fffffff1;
     border-radius: 10px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.985);
     padding-bottom: 1px;
@@ -120,7 +120,7 @@ section {
     font-size: 0.9rem;
     margin-right: 10px;
     margin-bottom: 10px;
-    box-shadow: 0 0 25px rgba(0, 58, 123, 0.985);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.499);
 
 
 }
@@ -298,7 +298,7 @@ header .container {
 
 .hero p {
     font-size: 1.1rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: var(--gray-color);
     max-width: 500px;
 }
@@ -317,8 +317,8 @@ header .container {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border: 10px solid var(--light-color);
-    box-shadow: -10px 20px 40px rgba(0, 0, 0, 0.034);
+    /*border: 10px solid var(--light-color);*/
+    box-shadow: -10px 20px 40px rgba(0, 0, 0, 0.759);
     position: relative;
     z-index: 2;
 }
@@ -946,7 +946,7 @@ footer {
 
 .footer-bottom {
     border-top: 1px solid rgb(0, 0, 0);
-    padding-top: 20px;
+    padding: 20px;
     text-align: center;
     display: flex;
     justify-content: space-between;

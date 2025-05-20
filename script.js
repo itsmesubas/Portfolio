@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!count) {
             // Initial count - in a real app, this would come from your database
-            count = Math.floor(Math.random() * 1) + 1; // Random number between 100-600
+            // count = Math.floor(Math.random() * 0) + 1; // Random number between 100-600
         } else {
             count = parseInt(count) + 1;
         }

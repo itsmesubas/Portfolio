@@ -38,8 +38,8 @@
                 <h1 class="animated-text">Hi, I'm <span class="highlight">Subash Dahal</span></h1>
                 <h2 class="animated-subtext">Currently pursuing my bachelor degree in Software engineer</h2>
                 <p class="animated-paragraph">I create beautiful, functional websites that deliver results.</p>
-                <a href="#contact" class="btn btn-primary animated-btn">Hire Me</a>
-                <a href="#projects" class="btn btn-secondary animated-btn">View Work</a>
+                <a href="#contact" class="btn btn-primary">Hire Me</a>
+                <a href="#projects" class="btn btn-secondary ">View Work</a>
             </div>
             <div class="hero-image">
                 <div class="image-wrapper">
@@ -83,7 +83,7 @@
                             <p>Pokhara, Nepal</p>
                         </div>
                     </div>
-                    <a href="" class="btn btn-primary" id="downloadCv" download="YourName_CV.pdf">Download CV</a>                </div>
+                    <a href="images/resume.pdf" class="btn btn-primary" id="downloadCv" download="SubashDahal.CV.pdf">Download CV</a>                </div>
             </div>
         </div>
     </section>
@@ -244,7 +244,7 @@
                 </div>
                 <div class="project-item" data-category="web">
                     <div class="project-img">
-                        <img src="images/Screenshot 2025-05-03 185339.png" alt="Project 2">
+                        <img src="images/tour ss.png" alt="Project 2">
                         <div class="project-overlay">
                             <h3>Tour and Travel Package Management System</h3>
                             <p>Help people get package while traveling </p>
@@ -380,7 +380,9 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm"  action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="b6f7b9e1-5d88-4310-82fe-84c533a4df55">
+
                         <div class="form-group">
                             <input type="text" id="name" placeholder="Your Name" required>
                         </div>
@@ -394,6 +396,7 @@
                             <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
+
                     </form>
                 </div>
             </div>
