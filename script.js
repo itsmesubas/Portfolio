@@ -26,47 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
         header.classList.toggle('scrolled', window.scrollY > 50);
     });
     
-    // Visitor counter
-    function updateVisitorCount() {
-        // In a real application, you would fetch this from a server/database
-        // For this demo, we'll use localStorage to simulate persistence
-        
-        let count = localStorage.getItem('visitorCount');
-        
-        if (!count) {
-            // Initial count - in a real app, this would come from your database
-            count = Math.floor(Math.random() * 0) + 1; // Random number between 100-600
-        } else {
-            count = parseInt(count) + 1;
-        }
-        
-        localStorage.setItem('visitorCount', count);
-        
-        // Animate the counter
-        const visitorElements = document.querySelectorAll('#visitors, #visitors-footer');
-        const targetCount = count;
-        const duration = 2000; // Animation duration in ms
-        const startTime = performance.now();
-        
-        function animateCount(currentTime) {
-            const elapsedTime = currentTime - startTime;
-            const progress = Math.min(elapsedTime / duration, 1);
-            const currentCount = Math.floor(progress * targetCount);
-            
-            visitorElements.forEach(el => {
-                el.textContent = currentCount;
-            });
-            
-            if (progress < 1) {
-                requestAnimationFrame(animateCount);
-            }
-        }
-        
-        requestAnimationFrame(animateCount);
-    }
-    
-    updateVisitorCount();
-    
+   
+      
     // Animate elements when scrolling
     gsap.registerPlugin(ScrollTrigger);
     
