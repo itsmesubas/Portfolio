@@ -2,7 +2,7 @@
 :root {
     --primary-color: #ffffff;
     --secondary-color: #09f069;
-    --dark-color: #0b79e6;
+    --dark-color: #e6b3d5;
     --light-color: #c39b3e;
     --danger-color: #ff1900;
     --success-color: #00ff6a;
@@ -39,7 +39,7 @@ body {
     padding: 0 15px;
     background-color: #6F4E37;
     border-radius: 10px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.985);
+    /* box-shadow: 0 0 25px rgba(0, 0, 0, 0.985); */
     padding-bottom: 1px;
 }
 
@@ -221,20 +221,6 @@ header .container {
     width: 100%;
 }
 
-.visitor-count {
-    display: flex;
-    align-items: center;
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 8px 15px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-}
-
-.visitor-count i {
-    margin-right: 5px;
-}
-
 .hamburger {
     display: none;
     cursor: pointer;
@@ -256,7 +242,7 @@ header .container {
     background-color: #6f4e37e8;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 0 2px rgba(1, 45, 74, 0.722);
+    /* box-shadow: 0 0 0 2px rgba(1, 45, 74, 0.722); */
 
 
 }
@@ -266,7 +252,7 @@ header .container {
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.985);
+    /* box-shadow: 0 0 25px rgba(0, 0, 0, 0.985); */
 
 }
 
@@ -386,7 +372,7 @@ header .container {
 
 }
 .about{
-    box-shadow: 0 0 0 2px rgba(1, 45, 74, 0.722);
+    /* box-shadow: 0 0 0 2px rgba(1, 45, 74, 0.722); */
 }
 .about-image {
     flex: 1;
@@ -443,7 +429,7 @@ header .container {
 }
 /* Skills Section - Updated with icons */
 .skills {
-    box-shadow: 0 0 0 2px rgba(1, 45, 74, 0.722);
+    /* box-shadow: 0 0 0 2px rgba(1, 45, 74, 0.722); */
 }
 
 .skills-grid {
