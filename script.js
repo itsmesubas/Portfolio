@@ -110,55 +110,55 @@ document.addEventListener('DOMContentLoaded', function() {
         ease: 'back.out(1.7)',
         delay: 0.5
     });
-    
-    // Section animations
-    gsap.utils.toArray('section').forEach(section => {
-        const heading = section.querySelector('.section-title');
-        const content = section.querySelectorAll('.about-content, .skills-container, .projects-grid, .certificates-slider, .contact-content');
+    // Remove or comment out these lines (around line 105-115):
+// Skill bars animation
+gsap.utils.toArray('.skill-progress').forEach(bar => {
+    gsap.from(bar, {
+        scrollTrigger: {
+            trigger: bar,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+        },
+        width: 0,
+        duration: 1.5,
+        ease: 'power3.out'
+    });
+});
         
-        if (heading) {
-            gsap.from(heading, {
+     // Section animations
+gsap.utils.toArray('section').forEach(section => {
+    const heading = section.querySelector('.section-title');
+    const content = section.querySelectorAll('.about-content, .skills-grid, .projects-grid, .certificates-slider, .contact-content');
+    
+    if (heading) {
+        gsap.from(heading, {
+            scrollTrigger: {
+                trigger: section,
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8
+        });
+    }
+    
+    if (content) {
+        content.forEach(item => {
+            gsap.from(item, {
                 scrollTrigger: {
-                    trigger: section,
+                    trigger: item,
                     start: 'top 80%',
                     toggleActions: 'play none none none'
                 },
                 y: 50,
                 opacity: 0,
-                duration: 0.8
+                duration: 0.8,
+                delay: 0.2
             });
-        }
-        
-        if (content) {
-            content.forEach(item => {
-                gsap.from(item, {
-                    scrollTrigger: {
-                        trigger: item,
-                        start: 'top 80%',
-                        toggleActions: 'play none none none'
-                    },
-                    y: 50,
-                    opacity: 0,
-                    duration: 0.8,
-                    delay: 0.2
-                });
-            });
-        }
-    });
-    
-    // Skill bars animation
-    gsap.utils.toArray('.skill-progress').forEach(bar => {
-        gsap.from(bar, {
-            scrollTrigger: {
-                trigger: bar,
-                start: 'top 80%',
-                toggleActions: 'play none none none'
-            },
-            width: 0,
-            duration: 1.5,
-            ease: 'power3.out'
         });
-    });
+    }
+});
     
     // Project filter
     const filterButtons = document.querySelectorAll('.filter-btn');
