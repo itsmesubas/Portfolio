@@ -73,18 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // Remove or comment out these lines (around line 105-115):
 // Skill bars animation
-gsap.utils.toArray('.skill-progress').forEach(bar => {
-    gsap.from(bar, {
-        scrollTrigger: {
-            trigger: bar,
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-        },
-        width: 0,
-        duration: 1.5,
-        ease: 'power3.out'
-    });
-});
+
         
      // Section animations
 gsap.utils.toArray('section').forEach(section => {
