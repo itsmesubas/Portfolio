@@ -508,9 +508,15 @@ header .container {
     font-weight: 500;
 }
 
-.filter-btn.active, .filter-btn:hover {
-    background-color: var(--primary-color);
+.filter-btn.active{
+    
+    background-color:#6F4E37 ;
     color: var(--white-color);
+
+}
+ .filter-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--black-color);
 }
 
 .projects-grid {
