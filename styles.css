@@ -8,7 +8,7 @@
     --success-color: #00ff6a;
     --warning-color: #f39c12;
     --gray-color: #f8feff;
-    --white-color: #fff7f7;
+    --white-color: #ffffff;
     --black-color: #000000;
 }
 
@@ -118,7 +118,7 @@ section {
 
 .btn-primary:hover {
     background-color: transparent;
-    color: var(--primary-color);
+    color: var(--black-color);
 }
 
 .btn-secondary {
@@ -443,7 +443,7 @@ header .container {
     width: 80px;
     height: 80px;
     margin: 0 auto 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--black-color), var(--secondary-color));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -460,11 +460,11 @@ header .container {
 .skill-item h3 {
     font-size: 1.3rem;
     margin-bottom: 10px;
-    color: var(--dark-color);
+    color: var(--white-color);
 }
 
 .skill-item p {
-    color: var(--gray-color);
+    color: var(--white-color);
     font-size: 0.9rem;
     line-height: 1.5;
 }
@@ -704,7 +704,7 @@ header .container {
     height: 50px;
     border-radius: 50%;
     background-color: var(--primary-color);
-    color: var(--white-color);
+    color: var(--black-color);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -714,13 +714,13 @@ header .container {
 }
 
 .slider-prev:hover, .slider-next:hover {
-    background-color: var(--black-color);
+    background-color: var(--success-color);
     transform: scale(1.1);
 }
 
 /* Contact Section */
 .contact{
-    box-shadow: 0 0 0 2px rgba(1, 45, 74, 0.722);
+    box-shadow: 0 0 0 2px rgb(1, 45, 74);
 
 }
 .contact-content {
@@ -731,7 +731,7 @@ header .container {
 
 .contact-info {
     flex: 1;
-    background-color: var(--white-color);
+    background-color: var(--black-color);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.251);
@@ -782,7 +782,7 @@ header .container {
 
 .social-links a:hover {
     background-color: var(--primary-color);
-    color: var(--white-color);
+    color: var(--success-color);
     transform: translateY(-5px);
 }
 
