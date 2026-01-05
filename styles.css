@@ -424,13 +424,13 @@ header .container {
 }
 
 .skill-item {
-    background-color: var(--white-color);
+    background-color:#6F4E37;
     padding: 30px;
-    border-radius: 10px;
+    
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+   
+    
 }
 
 .skill-item:hover {
