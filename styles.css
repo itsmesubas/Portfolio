@@ -888,7 +888,7 @@ footer {
 
 .footer-contact i {
     margin-right: 10px;
-    color: var(--primary-color);
+    color: var(--danger-color);
 }
 
 .footer-bottom {
@@ -898,7 +898,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--danger-color);
+    color: var(--white-color);
     font-size: 0.9rem;
 }
 
