@@ -407,18 +407,17 @@ header .container {
 
 /* Skills Section */
 .skills-container {
-    display:flex;
+    display:grid;
     gap: 30px;
     margin-top: 30px;
 }
 /* Skills Section - Updated with icons */
-.skills {
-    /* box-shadow: 0 0 0 2px rgba(1, 45, 74, 0.722); */
-}
 
 .skills-grid {
-    display: flex;
+    display: grid;
     gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+
     margin-top: 50px;
 }
 
@@ -471,14 +470,15 @@ header .container {
 /* Responsive adjustments for skills */
 @media (max-width: 768px) {
     .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
         gap: 20px;
     }
 }
 
 @media (max-width: 576px) {
     .skills-grid {
-        grid-template-columns: 1fr;
+            grid-template-columns: repeat(3, 1fr);
+
         gap: 15px;
     }
 }
