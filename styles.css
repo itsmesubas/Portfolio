@@ -600,9 +600,9 @@ header .container {
 }
 
 .project-link:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--white-color);
     color: #000000;
-    transform: rotate(45deg);
+    /* transform: rotate(45deg); */
 }
 
 /* Certificates Section */
