@@ -57,29 +57,38 @@ document.addEventListener('DOMContentLoaded', function () {
     setActiveNav();
 
     // ===== TYPED TEXT EFFECT =====
-    const words  = ['PHP & MySQL.', 'Python.', 'JavaScript.', 'HTML & CSS.', 'UI/UX Design.'];
-    const target = document.querySelector('.typed-text');
-    let wi = 0, ci = 0, deleting = false;
+const words  = ['PHP & MySQL.', 'Python.', 'JavaScript.', 'HTML & CSS.', 'UI/UX Design.'];
+const target = document.querySelector('.typed-text');
+let wi = 0, ci = 0, deleting = false;
 
-    function type() {
-        if (!target) return;
-        const word = words[wi];
-        target.textContent = deleting ? word.slice(0, ci--) : word.slice(0, ci++);
+function type() {
+    if (!target) return;
+    const word = words[wi];
 
-        let delay = deleting ? 60 : 100;
-
-        if (!deleting && ci === word.length + 1) {
-            delay = 1800;
-            deleting = true;
-        } else if (deleting && ci === 0) {
-            deleting = false;
-            wi = (wi + 1) % words.length;
-            delay = 400;
-        }
-        setTimeout(type, delay);
+    if (!deleting) {
+        ci++;
+        target.textContent = word.slice(0, ci);
+    } else {
+        ci--;
+        target.textContent = word.slice(0, ci);
     }
-    type();
 
+    let delay = deleting ? 60 : 110;
+
+    if (!deleting && ci === word.length) {
+        delay = 1800;
+        deleting = true;
+    } else if (deleting && ci === 0) {
+        deleting = false;
+        wi = (wi + 1) % words.length;
+        delay = 400;
+    }
+
+    setTimeout(type, delay);
+}
+
+// Small delay to ensure DOM is painted before starting
+setTimeout(type, 500);
     // ===== GSAP ANIMATIONS =====
     if (typeof gsap !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
