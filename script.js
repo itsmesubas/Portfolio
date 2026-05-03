@@ -187,7 +187,7 @@ setTimeout(type, 500);
                 }
             });
         });
-    });
+    }); 
 
     // ===== CERTIFICATE SLIDER =====
     const slider  = document.querySelector('.certificates-slider');
