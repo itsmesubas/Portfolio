@@ -189,15 +189,6 @@ setTimeout(type, 500);
         });
     }); 
 
-    // ===== CERTIFICATE SLIDER =====
-    const slider  = document.querySelector('.certificates-slider');
-    const prevBtn = document.querySelector('.slider-prev');
-    const nextBtn = document.querySelector('.slider-next');
-
-    if (slider && prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => slider.scrollBy({ left: -310, behavior: 'smooth' }));
-        nextBtn.addEventListener('click', () => slider.scrollBy({ left: 310, behavior: 'smooth' }));
-    }
 
     // ===== CONTACT FORM =====
     const contactForm = document.getElementById('contactForm');
@@ -239,3 +230,212 @@ setTimeout(type, 500);
     }
 
 });
+// ===== CERTIFICATE STACK SLIDER =====
+(function () {
+    const stack   = document.getElementById('certStack');
+    if (!stack) return;
+
+    const cards   = Array.from(stack.querySelectorAll('.cert-card'));
+    const dots    = Array.from(document.querySelectorAll('.cert-dot'));
+    const counter = document.getElementById('certCounter');
+    const prevBtn = document.getElementById('certPrev');
+    const nextBtn = document.getElementById('certNext');
+    const total   = cards.length;
+    let current   = 0;
+    let timer     = null;
+    let isHovered = false;
+
+    // ── Stack positions ──────────────────────────────
+    const POS = [
+        { y: 0,  r: 0,   o: 1,    s: 1,    z: 10 },
+        { y: 14, r: 2.5, o: 0.85, s: 0.96, z: 9  },
+        { y: 26, r: -2,  o: 0.70, s: 0.92, z: 8  },
+        { y: 36, r: 3,   o: 0.55, s: 0.88, z: 7  },
+        { y: 40, r: 0,   o: 0,    s: 0.85, z: 6  },
+    ];
+
+    // ── Render stack ─────────────────────────────────
+    function render() {
+        cards.forEach((card, i) => {
+            const pos = (i - current + total) % total;
+            const p   = POS[Math.min(pos, POS.length - 1)];
+            card.style.transform     = `translateY(${p.y}px) rotate(${p.r}deg) scale(${p.s})`;
+            card.style.opacity       = p.o;
+            card.style.zIndex        = p.z;
+            card.style.pointerEvents = pos === 0 ? 'auto' : 'none';
+        });
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        if (counter) counter.textContent = `${current + 1} / ${total}`;
+    }
+
+    // ── Navigation ───────────────────────────────────
+    function goTo(index) {
+        current = (index + total) % total;
+        render();
+    }
+    function goNext() { goTo(current + 1); }
+    function goPrev() { goTo(current - 1); }
+
+    // ── Auto play ────────────────────────────────────
+    function startAuto() {
+        stopAuto();
+        timer = setInterval(() => { if (!isHovered) goNext(); }, 4000);
+    }
+    function stopAuto() { clearInterval(timer); timer = null; }
+
+    // ── Button events ────────────────────────────────
+    nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); goNext(); startAuto(); });
+    prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); goPrev(); startAuto(); });
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goTo(parseInt(dot.getAttribute('data-index')));
+            startAuto();
+        });
+    });
+
+    // ── Swipe ────────────────────────────────────────
+    let touchStartX = 0;
+    stack.addEventListener('touchstart', e => {
+        touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    stack.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+            diff > 0 ? goNext() : goPrev();
+            startAuto();
+        }
+    }, { passive: true });
+
+    // ── Keyboard ─────────────────────────────────────
+    document.addEventListener('keydown', e => {
+        if (modal.style.display === 'flex') return;
+        if (e.key === 'ArrowRight') { goNext(); startAuto(); }
+        if (e.key === 'ArrowLeft')  { goPrev(); startAuto(); }
+    });
+
+    // ── Hover overlay (top card only) ────────────────
+    stack.addEventListener('mouseenter', () => {
+        isHovered = true;
+        const topCard = cards[current];
+        const overlay = topCard.querySelector('.certificate-overlay');
+        if (overlay) overlay.style.opacity = '1';
+    });
+
+    stack.addEventListener('mouseleave', () => {
+        isHovered = false;
+        cards.forEach(card => {
+            const overlay = card.querySelector('.certificate-overlay');
+            if (overlay) overlay.style.opacity = '0';
+        });
+    });
+
+    // ── Single click = next slide ─────────────────────
+    stack.addEventListener('click', (e) => {
+        // ignore clicks on overlay buttons
+        if (e.target.closest('.certificate-overlay')) return;
+        goNext();
+        startAuto();
+    });
+
+    // Init
+    render();
+    startAuto();
+
+    // ════════════════════════════════════════════════
+    // MODAL — built in JS, zero HTML dependency
+    // ════════════════════════════════════════════════
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+        display:none; position:fixed; inset:0;
+        background:rgba(0,0,0,0.94);
+        z-index:999999;
+        align-items:center; justify-content:center;
+        padding:20px;
+    `;
+
+    const mImg = document.createElement('img');
+    mImg.style.cssText = `
+        max-width:95vw; max-height:90vh;
+        object-fit:contain; border-radius:10px;
+        box-shadow:0 0 80px rgba(0,0,0,0.9);
+        display:block;
+    `;
+
+    const mClose = document.createElement('button');
+    mClose.innerHTML = '✕';
+    mClose.style.cssText = `
+        position:fixed; top:16px; right:20px;
+        width:44px; height:44px; border-radius:50%;
+        border:2px solid rgba(255,255,255,0.4);
+        background:rgba(255,255,255,0.1);
+        color:#fff; font-size:1.2rem; cursor:pointer;
+        display:flex; align-items:center; justify-content:center;
+        z-index:1000000; transition:background 0.2s;
+    `;
+    mClose.onmouseenter = () => mClose.style.background = '#00ff6a';
+    mClose.onmouseleave = () => mClose.style.background = 'rgba(255,255,255,0.1)';
+
+    modal.appendChild(mImg);
+    modal.appendChild(mClose);
+    document.body.appendChild(modal);
+
+    function openModal(src, alt) {
+        mImg.src              = src;
+        mImg.alt              = alt || 'Certificate';
+        modal.style.display   = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.style.display          = 'none';
+        mImg.src                     = '';
+        document.body.style.overflow = '';
+    }
+
+    mClose.addEventListener('click', (e) => { e.stopPropagation(); closeModal(); });
+    modal.addEventListener('click',  (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // ── Add "View" button inside each overlay ────────
+    cards.forEach((card) => {
+        const overlay = card.querySelector('.certificate-overlay');
+        const img     = card.querySelector('img');
+        if (!overlay || !img) return;
+
+        const viewBtn = document.createElement('a');
+        viewBtn.innerHTML = '<i class="fas fa-expand"></i> View Full';
+        viewBtn.style.cssText = `
+            display:inline-flex; align-items:center; gap:7px;
+            margin-top:14px; padding:8px 22px;
+            background:#00ff6a; color:#000;
+            border-radius:30px; font-size:0.82rem;
+            font-weight:700; font-family:'Poppins',sans-serif;
+            cursor:pointer; text-decoration:none;
+            transition:transform 0.2s, background 0.2s;
+        `;
+        viewBtn.onmouseenter = () => viewBtn.style.transform = 'scale(1.06)';
+        viewBtn.onmouseleave = () => viewBtn.style.transform = 'scale(1)';
+
+        viewBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            openModal(img.src, img.alt);
+        });
+
+        overlay.appendChild(viewBtn);
+    });
+
+    // ── Hint below stack ──────────────────────────────
+    const hint = document.createElement('p');
+    hint.textContent = '💡 Hover card and click "View Full" to zoom';
+    hint.style.cssText = `
+        text-align:center; margin-top:10px;
+        color:rgba(160,160,184,0.55);
+        font-size:0.76rem; font-family:'Poppins',sans-serif;
+    `;
+    stack.insertAdjacentElement('afterend', hint);
+
+})();
