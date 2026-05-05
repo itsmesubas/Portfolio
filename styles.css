@@ -440,8 +440,6 @@ header .container {
 
 .skills-categories { display: flex; flex-direction: column; gap: 48px; }
 
-.skill-category { }
-
 .category-label {
     font-size: 1rem;
     font-weight: 600;
@@ -521,14 +519,6 @@ header .container {
     margin-bottom: 12px;
 }
 
-/* Skill progress bar */
-.skill-bar {
-    height: 4px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 2px;
-    overflow: hidden;
-    margin-bottom: 6px;
-}
 
 .skill-fill {
     height: 100%;
