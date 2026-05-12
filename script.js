@@ -344,9 +344,7 @@ setTimeout(type, 500);
     render();
     startAuto();
 
-    // ════════════════════════════════════════════════
-    // MODAL — built in JS, zero HTML dependency
-    // ════════════════════════════════════════════════
+    
     const modal = document.createElement('div');
     modal.style.cssText = `
         display:none; position:fixed; inset:0;
